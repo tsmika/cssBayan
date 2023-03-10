@@ -6,25 +6,36 @@ body {
 
 .accordion {
     width: 1000px;
-    
 }
 
+.accordion-title { 
+    display: block;
+    margin: 15px;
+    font-size: 40px;
+    font-weight: bold;
+    
+}
 .accordion-item {
-    /*border-top: solid rgb(214, 223, 247);*/
     border-top:solid rgb(105, 153, 153) 5px;
-    margin: 10px;
     background-color: rgb(235, 241, 241);
+    cursor: pointer;
 }
 
 .accordion-item_title {
-    background-color: rgb(230, 196, 146);
+    display: block;
+    padding: 1px 15px;
+    cursor: pointer;
 }
 
 .accordion-item_input {
-    background-color: rgb(221, 236, 179);
+    width: 0;
+    height: 0;
+    appearance: none;
+    position: absolute;
 }
 
 .accordion-item_image {
     width: 40%;
     height: 40%;
+    display: none;
 }
