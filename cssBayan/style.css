@@ -1,23 +1,15 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
 body {
     font-family: Arial, sans-serif;
-    font-size: 16 px;
     background-color: rgb(246, 248, 252);
-    line-height: 2;
 }
 
- summary {
+summary {
     list-style: none;
-  } 
+  }
 
-/* summary::-webkit-details-marker {
+summary::-webkit-details-marker {
     display: none;
-} */
+}
 
 .wrapper {
     display: flex;
@@ -27,31 +19,36 @@ body {
 }
 
 .accordion {
-    max-width: 1920px;
-    /* min-width: 800px; */
+    line-height: 2;
 }
 .accordion-title{
-    font-size: 30px;
+    font-size: 1.8rem;
     font-weight: 800;
-}
-
-.accordion-item {
-
 }
 
 .accordion-item__title {
     border-top:solid rgb(211, 223, 247) 5px;
     width: 100%;
     color: #314de7;
-    font-size: 20px;
+    font-size: 1.3rem;
     font-weight: 800;
     cursor: pointer;
-    
+    position: relative;
+}
+
+.accordion-item__title::after {
+    content: '+';
+    position: absolute;
+    right: 0.5em;
+}
+
+.accordion-item[open].accordion-item__title::after {
+    content: '-';
 }
 
 .accordion-item__image {
     display: block;
     width: 60%;
     margin: 0 auto;
-    margin-bottom: 10px;
+    margin-bottom: 1em;
 }
