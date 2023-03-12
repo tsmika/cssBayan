@@ -20,9 +20,11 @@ summary::-webkit-details-marker {
 
 .accordion {
     line-height: 2;
+    width: 80vh;
 }
 
 .accordion-title{
+    display: inline-flex;
     font-size: 1.8rem;
     font-weight: 800;
 }
@@ -38,20 +40,50 @@ summary::-webkit-details-marker {
     cursor: pointer;
 }
 
+.accordion:hover .accordion-item__title {
+    color: black;
+    transition: 1s;
+}
+
+.accordion:hover .accordion-item__title___marker1 {
+    display: none;
+    transition: 1s;
+} 
+
+.accordion:hover .accordion-item__title___marker2 {
+    display: none;
+    transition: 1s;
+} 
+
 .accordion-item[open] .accordion-item__title___marker1 {
     display: none;
 } 
 
+.accordion-item[open] .accordion-item__title {
+    color: black;
+}
+
 .accordion-item:not([open]) .accordion-item__title___marker2 {
     display: none;
 } 
+
+.accordion-item__content:hover {
+    cursor: pointer;
+}
 
 .accordion-item__image {
     display: block;
     width: 60%;
     margin: 0 auto;
     margin-bottom: 1em;
-    cursor: pointer;    
+    cursor: pointer;
+}
+
+.accordion-item[open] .accordion-item__content {
+    opacity:0; 
+    transition: 1.5s;
+    animation: show 1.5s 1;
+    animation-fill-mode: forwards;    
 }
 
 @media (cursor: cursor) {
@@ -59,3 +91,51 @@ summary::-webkit-details-marker {
         cursor: pointer;
     }
   }
+
+  @keyframes show{
+    0%{
+    opacity:0;
+    }
+    100% {
+    opacity:1;
+    }
+    }
+
+    @media only screen and (max-width: 310px) {
+        .accordion-item__title {
+            font-size: 0.5em;
+            font-weight:100;
+        }
+        .accordion {
+            width: 100%;
+        }
+      }    
+
+      @media only screen and (max-width: 500px) {
+        .accordion-item__title {
+            font-size: 0.7em;
+            font-weight: 400;
+        }
+        .accordion {
+            width: 80%;
+        }
+      }
+      
+      @media only screen and (max-width: 800px) {
+        .accordion-item__title {
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+        .accordion {
+            width: 60%;
+        }
+      }
+
+      @media only screen and (max-width: 1900px) {
+        .accordion-item__title {
+            font-weight: 800;
+        }
+        .accordion {
+            width: 55vh;
+        }
+      }    
